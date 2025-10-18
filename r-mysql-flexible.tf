@@ -67,6 +67,7 @@ resource "azurerm_mysql_flexible_server" "mysql_flexible_server" {
     ignore_changes = [
       zone,
       high_availability[0].standby_availability_zone,
+      create_mode,
     ]
     precondition {
       condition     = (var.storage.io_scaling_enabled && var.storage.iops == null) || (!var.storage.io_scaling_enabled && var.storage.iops != null)
