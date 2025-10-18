@@ -46,6 +46,21 @@ variable "allowed_cidrs" {
   default     = {}
 }
 
+variable "azure_services_access_enabled" {
+  description = "Whether to allow Azure services to access the MySQL Flexible server."
+  type        = bool
+  default     = false
+  nullable    = false
+}
+
+variable "delegated_subnet" {
+  description = "The ID of the Virtual Network Subnet to create the MySQL Flexible server."
+  type = object({
+    id = string
+  })
+  default = null
+}
+
 variable "extra_tags" {
   description = "Map of custom tags"
   type        = map(string)
