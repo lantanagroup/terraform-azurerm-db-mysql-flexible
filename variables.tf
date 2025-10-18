@@ -53,14 +53,6 @@ variable "azure_services_access_enabled" {
   nullable    = false
 }
 
-variable "delegated_subnet" {
-  description = "The ID of the Virtual Network Subnet to create the MySQL Flexible server."
-  type = object({
-    id = string
-  })
-  default = null
-}
-
 variable "extra_tags" {
   description = "Map of custom tags"
   type        = map(string)
